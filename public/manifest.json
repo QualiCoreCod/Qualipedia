@@ -1,0 +1,15 @@
+{
+  "short_name": "QualiPédia",
+  "name": "QualiPédia - Enciclopédia de Gestão da Qualidade",
+  "icons": [
+    {
+      "src": "https://base44.com/logo_v2.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#F5F7FA",
+  "theme_color": "#234E70",
+  "display": "standalone"
+}

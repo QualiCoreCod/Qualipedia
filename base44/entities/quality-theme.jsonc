@@ -1,0 +1,122 @@
+{
+  "name": "QualityTheme",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Título"
+    },
+    "category": {
+      "type": "string",
+      "title": "Categoria",
+      "enum": [
+        "Metodologia",
+        "Norma",
+        "Ferramenta",
+        "Indicador",
+        "Processo",
+        "Conceito"
+      ],
+      "default": "Ferramenta"
+    },
+    "origin": {
+      "type": "string",
+      "title": "Origem (quem/quando/por quê)",
+      "format": "textarea"
+    },
+    "concept": {
+      "type": "string",
+      "title": "Conceito",
+      "format": "textarea"
+    },
+    "when_to_use": {
+      "type": "string",
+      "title": "Quando usar (situações-gatilho)",
+      "format": "textarea"
+    },
+    "how_to_apply": {
+      "type": "string",
+      "title": "Como aplicar (passo a passo)",
+      "format": "textarea"
+    },
+    "examples": {
+      "type": "string",
+      "title": "Exemplos",
+      "format": "textarea"
+    },
+    "contexts": {
+      "type": "array",
+      "title": "Contextos de aplicação",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "where_i_used": {
+      "type": "string",
+      "title": "Onde já usei",
+      "format": "textarea"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "default": []
+    },
+    "attachments": {
+      "type": "array",
+      "title": "Anexos",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nome"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL"
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "title": "Fontes externas",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nome"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "concept"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

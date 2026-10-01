@@ -1,0 +1,31 @@
+# Dependências e artefatos de build
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Variáveis locais e vínculo gerado pelo Base44 CLI
+.env
+.env.*
+!.env.example
+base44/.app.jsonc
+*.local
+
+# Logs e arquivos do sistema
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Acervos privados e materiais de referência
+dados/
+Insumos/
+biblioteca/
+documentos/
+
+# Anotações de ferramentas que não fazem parte da aplicação
+AGENTES.md
+CLAUDE.md

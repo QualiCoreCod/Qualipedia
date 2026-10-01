@@ -1,0 +1,77 @@
+{
+  "name": "DecisionGuide",
+  "type": "object",
+  "properties": {
+    "situation": {
+      "type": "string",
+      "title": "Situação-problema",
+      "format": "textarea"
+    },
+    "recommended_tool": {
+      "type": "string",
+      "title": "Ferramenta recomendada"
+    },
+    "reasoning": {
+      "type": "string",
+      "title": "Por que usar",
+      "format": "textarea"
+    },
+    "applies_to": {
+      "type": "string",
+      "title": "Em que se aplica (contextos/setores)",
+      "format": "textarea"
+    },
+    "steps": {
+      "type": "string",
+      "title": "Passos sugeridos (máx. 5, um por linha)",
+      "format": "textarea"
+    },
+    "category": {
+      "type": "string",
+      "title": "Categoria",
+      "enum": [
+        "Análise de causa",
+        "Planejamento",
+        "Controle",
+        "Melhoria",
+        "Auditoria",
+        "Indicadores"
+      ],
+      "default": "Melhoria"
+    },
+    "references": {
+      "type": "array",
+      "title": "Fontes externas",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Nome"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "situation",
+    "recommended_tool"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Material",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Título"
+    },
+    "type": {
+      "type": "string",
+      "title": "Tipo",
+      "enum": [
+        "Metodologia",
+        "Template",
+        "Planilha",
+        "Documento",
+        "Apresentação",
+        "Checklist",
+        "Outro"
+      ],
+      "default": "Metodologia"
+    },
+    "description": {
+      "type": "string",
+      "title": "Descrição",
+      "format": "textarea"
+    },
+    "file_url": {
+      "type": "string",
+      "title": "Arquivo (URL)"
+    },
+    "link": {
+      "type": "string",
+      "title": "Link externo"
+    },
+    "related_theme": {
+      "type": "string",
+      "title": "Tema relacionado"
+    },
+    "contexts": {
+      "type": "array",
+      "title": "Contextos de aplicação",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "title",
+    "type"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": true,
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

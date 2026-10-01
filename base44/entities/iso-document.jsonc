@@ -1,0 +1,47 @@
+{
+  "name": "IsoDocument",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Título"
+    },
+    "description": {
+      "type": "string",
+      "title": "Descrição",
+      "format": "textarea"
+    },
+    "file_url": {
+      "type": "string",
+      "title": "Arquivo (URL)"
+    },
+    "clause": {
+      "type": "string",
+      "title": "Cláusula relacionada",
+      "enum": [
+        "Geral",
+        "Contexto",
+        "Liderança",
+        "Planejamento",
+        "Apoio",
+        "Operação",
+        "Avaliação de desempenho",
+        "Melhoria"
+      ],
+      "default": "Geral"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {},
+    "create": true,
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
